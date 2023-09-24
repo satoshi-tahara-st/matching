@@ -27,6 +27,7 @@ services:
       - ./db/init:/docker-entrypoint-initdb.d
     networks:
       - mynetwork
+    command: mysqld --innodb_use_native_aio=0
 
 networks:
   mynetwork:

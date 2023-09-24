@@ -40,8 +40,7 @@ CREATE TABLE matching_t (
     PRIMARY KEY (`matching_id`),
     FOREIGN KEY (`account_id_1`) REFERENCES `account_t`(`account_id`),
     FOREIGN KEY (`account_id_2`) REFERENCES `account_t`(`account_id`),
-    KEY `idx_from_to_account_id` (`from_account_id`, `to_account_id`),
-    KEY `idx_message_id`(`message_id`)
+    KEY `idx_account_id_1_2` (`account_id_1`, `account_id_2`)
 );
 
 CREATE TABLE `message_t` (
