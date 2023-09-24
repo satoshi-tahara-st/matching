@@ -1,3 +1,6 @@
+CREATE DATABASE matching_db;
+USE matching_db;
+
 CREATE TABLE `account_t` (
     `account_id` int NOT NULL AUTO_INCREMENT,
     `email` varchar(128) NOT NULL,
@@ -38,7 +41,7 @@ CREATE TABLE matching_t (
     FOREIGN KEY (`account_id_1`) REFERENCES `account_t`(`account_id`),
     FOREIGN KEY (`account_id_2`) REFERENCES `account_t`(`account_id`),
     KEY `idx_from_to_account_id` (`from_account_id`, `to_account_id`),
-    KEY `idx_message_id`(`message_id`),
+    KEY `idx_message_id`(`message_id`)
 );
 
 CREATE TABLE `message_t` (
